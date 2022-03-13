@@ -1,0 +1,240 @@
+@import "vars";
+
+/*  FORM VALIDATION */
+.form-group {
+  position: relative;
+}
+
+.invalid input {
+  border: 1px solid #fb434a !important;
+}
+
+.pl-fieldset {
+  background: var(--pl-form-fieldset-bg);
+}
+
+.form-control-error {
+  background: $danger;
+  padding: 5px 8px;
+  border-radius: 3px;
+  position: absolute;
+  z-index: $form-error-tooltip-index;
+  right: 0;
+  bottom: calc(100%);
+  margin-bottom: 8px;
+  max-width: 80%;
+  font-size: 80%;
+  transition: .2s;
+
+  &:hover {
+    opacity: 0.2;
+  }
+}
+
+.form-control-error:after {
+  width: 0;
+  height: 0;
+  content: '';
+  display: block;
+  border-style: solid;
+  border-width: 5px 5px 0;
+  border-color: $danger transparent transparent;
+  position: absolute;
+  right: 20px;
+  bottom: -4px;
+  margin-left: -5px;
+}
+
+.form-control-error ul {
+  list-style: none;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+.form-control-error-list ul {
+  list-style: none;
+  color: $danger;
+  padding: 0;
+  margin: 5px 0 0 0;
+  font-size: 80%;
+  font-weight: 400;
+}
+
+
+.table-form-element {
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+.vue-simple-suggest > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.vue-simple-suggest.designed {
+  position: relative;
+}
+
+.vue-simple-suggest.designed, .vue-simple-suggest.designed * {
+  box-sizing: border-box;
+}
+
+.vue-simple-suggest.designed .input-wrapper input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--pl-form-element-border-color);
+  border-radius: 3px;
+  color: $gray-6;
+  //background: white;
+  outline: none;
+  transition: all .1s;
+  transition-delay: .05s
+}
+
+.vue-simple-suggest.designed.focus .input-wrapper input {
+  border: 1px solid #aaa;
+}
+
+.vue-simple-suggest.designed .suggestions {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  top: calc(100% + 5px);
+  border-radius: 3px;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  opacity: 1;
+  z-index: 1000;
+}
+
+.vue-simple-suggest.designed .suggestions .suggest-item {
+  cursor: pointer;
+  user-select: none;
+}
+
+.vue-simple-suggest.designed .suggestions .suggest-item,
+.vue-simple-suggest.designed .suggestions .misc-item {
+  padding: 5px 10px;
+}
+
+.vue-simple-suggest.designed .suggestions .suggest-item.hover {
+  //background-color: #2874D5 !important;
+  //color: #fff !important;
+}
+
+.vue-simple-suggest.designed .suggestions .suggest-item.selected {
+  //background-color: #2832D5;
+  //color: #fff;
+}
+
+
+.vue-simple-suggest.focus input {
+  border-color: $primary !important;
+}
+
+.vue-simple-suggest input {
+  border-color: $border;
+}
+
+.suggestions {
+  max-height: 50vh;
+  overflow-y: auto;
+
+  z-index: $autocomplete-index !important;
+  border-color: $border !important;
+  border-width: 1px;
+
+  .suggest-item:first-child {
+    border-top: none;
+  }
+
+  .suggest-item.hover, .suggest-item.selected {
+    border-color: $primary;
+  }
+
+  .suggest-item:last-child {
+    border-bottom: none;
+  }
+
+  .suggest-item {
+    border-left: none;
+    border-right: none;
+  }
+
+  .suggest-item.hover {
+    color: #fff;
+    background-color: $primary;
+  }
+
+  .suggest-item.selected {
+    color: #fff;
+    background-color: $primary;
+  }
+}
+
+
+.image-m-container {
+  border: 1px solid $border;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.image-m-item {
+  padding: 5px;
+
+  .file-name, .uploaded-date {
+    font-size: 13px;
+  }
+
+  .file-name i {
+    font-size: 12px;
+  }
+
+  .info {
+    background: #fff;
+  }
+}
+
+.image-m-preview {
+  padding-top: 50%;
+  padding-bottom: 50%;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+}
+
+.image-gallery-preview {
+  padding-top: 50%;
+  padding-bottom: 50%;
+  height: calc(100% - 10px);
+  width: calc(100% - 10px);
+  background-position: center;
+  background-size: cover;
+  margin: 5px;
+  border-radius: 4px;
+}
+
+.vue-lightbox-info h4 {
+  color: white;
+}
+
+.platon-form .form-group {
+  margin-bottom: .4rem;
+}
+
+.platon-form {
+  .row, .form-row {
+    align-content: flex-start;
+  }
+}

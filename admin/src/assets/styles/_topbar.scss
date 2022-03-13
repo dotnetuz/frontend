@@ -1,0 +1,85 @@
+$collapsed-sidebar: 60px;
+
+.topbar {
+  display: flex;
+  align-items: center;
+  z-index: $navbar-index;
+  width: 100%;
+  min-height: 52px;
+  max-height: 52px;
+  border: none;
+  margin-bottom: 0;
+  background-color: $top-bar;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+  border-radius: 0;
+  top: 0;
+  left: 0;
+}
+
+
+.left-menu {
+  min-height: calc(100vh);
+  //max-height: calc(100vh - 52px);
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+  max-width: 240px;
+  width: 240px;
+  min-width: 240px;
+  transition: .2s;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  //overflow-y: auto
+}
+
+.left-menu.collapsed {
+  width: $collapsed-sidebar;
+  max-width: $collapsed-sidebar;
+  min-width: $collapsed-sidebar;
+
+  .menu-level-1 > .menu-icon {
+    font-size: 20px !important;
+  }
+
+  .version {
+    display: none;
+  }
+
+  .platon-profile {
+    & .platon-user-info {
+      display: none;
+    }
+
+    padding: .4rem;
+  }
+
+  .menu-plus {
+    display: none !important;
+  }
+
+  .menu-level-1 > .menu-item-text {
+    display: none;
+  }
+}
+
+.platon-layout {
+  position: relative;
+  display: flex;
+  background: #f5f5f5;
+}
+
+//.platon-layout .content {
+//  transition: .2s;
+//  max-height: calc(100vh - 52px);
+//  overflow-y: auto;
+//}
+
+.platon-layout .content:not(.collapsed) {
+  margin-left: 0;
+  width: calc(100vw - 240px);
+}
+
+.platon-profile {
+  padding: .75rem 1rem;
+
+}

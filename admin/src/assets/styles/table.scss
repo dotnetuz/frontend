@@ -1,0 +1,207 @@
+@import 'vars';
+
+
+.platon-table {
+  width: max-content;
+  min-width: 100%;
+}
+
+.table td, .table th {
+  padding: 5px 8px;
+}
+
+.table thead th {
+  font-size: 15px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table td {
+  font-size: 14px;
+}
+
+.table-wrapper {
+  border: 1px solid $border;
+}
+
+.table-wrapper.focus {
+  box-shadow: 0 0 2px $primary;
+}
+
+.platon-table {
+  outline: none;
+}
+
+.platon-table-fix-left tbody tr:hover, .platon-table-fix-left tbody tr.hover,
+.platon-table-fix-right tbody tr:hover, .platon-table-fix-right tbody tr.hover,
+.platon-table tbody tr:hover, .platon-table tbody tr.hover {
+  background-color: #e7ebf3 !important;
+}
+
+.platon-table tbody tr.focus, .platon-table-fix-left tbody tr.focus, .platon-table-fix-right tbody tr.focus {
+  background-color: darken(#e7ebf3, 3%) !important;
+}
+
+.table thead th, table tbody th {
+  background-color: lighten(#e7ebf3, 3%) !important;
+}
+
+.platon-table, .platon-table-fix-left, .platon-table-fix-right {
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.platon-table-fix-left tbody tr:nth-child(2n),
+.platon-table-fix-right tbody tr:nth-child(2n),
+.platon-table tbody tr:nth-child(2n) {
+  background-color: #f8f9fc;
+}
+
+.platon-table-fix-right {
+  background-color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.platon-table-fix-left {
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.platon-table-no-data {
+  margin-top: -7px;
+  border: 1px solid $table-border-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  height: 300px;
+}
+
+
+.t-nopad tbody td {
+  padding: 0 !important;
+}
+
+.t-nopad tbody input {
+  border: none !important;
+}
+
+.t-nopad tbody .select2-selection {
+  border: none !important;
+}
+
+.t-nopad tbody .form-group {
+  margin-bottom: 0 !important;
+}
+
+.vm--modal {
+  //max-height: calc(100vh - 3rem) !important;
+}
+
+.vm--container {
+  //padding: 2rem 0;
+  overflow: auto;
+}
+
+//
+//.platon-dialog {
+//  max-height: calc(100vh - 10px);
+//}
+
+.form-layout, .platon-dialog {
+  //height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .table {
+    margin-bottom: 0 !important;
+  }
+
+  table td {
+    vertical-align: middle;
+    text-align: center;
+    //
+    //& .d-flex.align-items-center {
+    //  justify-content: center;
+    //}
+  }
+}
+
+.form-layout table {
+  width: 100%;
+}
+
+table td a {
+  color: inherit;
+  text-decoration: underline !important;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+.table th, .table td {
+  text-align: center;
+}
+
+.table td.text-left {
+  text-align: left !important;
+  padding: 5px 5px 5px 10px !important;
+}
+
+.table td.text-right {
+  text-align: right !important;
+  padding: 5px 10px 5px 5px !important;
+}
+
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+  padding: 5px;
+  vertical-align: middle;
+}
+
+.table-hover > tbody > tr {
+  background-color: #fff;
+}
+
+.table-h-scroll {
+  overflow-y: auto;
+  position: relative;
+}
+
+.table-h-scroll tfoot td {
+  background: #f1f4f8;
+}
+
+.group-cell {
+  font-size: 110% !important;
+  font-weight: bold !important;
+}
+
+.platon-table .group-cell {
+  background: white;
+  top: 0;
+  z-index: 3;
+  position: sticky;
+  text-align: left !important;
+}
+
+.table-filters.form-row {
+  & > *:first-child {
+    padding-left: 0;
+  }
+
+  & > *:last-child {
+    padding-right: 0;
+  }
+
+
+  & > * {
+    margin-bottom: .25rem;
+    padding-right: .25rem;
+    padding-left: .25rem;
+  }
+}

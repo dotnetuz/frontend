@@ -1,0 +1,137 @@
+// @import '~pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.css';
+
+@import "vars";
+
+.bootstrap-datetimepicker-widget {
+  z-index: $datepicker-index;
+}
+
+.platon-form .date-picker-input {
+  padding-right: 2rem;
+}
+
+.table-filters .date-picker-input {
+  text-align: center !important;
+}
+
+.datepicker {
+  color: $text;
+}
+
+.bootstrap-datetimepicker-widget .picker-switch td span,
+.bootstrap-datetimepicker-widget .picker-switch td i,
+.bootstrap-datetimepicker-widget.usetwentyfour td.hour,
+.bootstrap-datetimepicker-widget.usetwentyfour td.minute {
+  color: $text;
+}
+
+.datepicker table tr td .active.disabled:hover[disabled],
+.datepicker table tr td .active.disabled[disabled],
+.datepicker table tr td .active:active,
+.datepicker table tr td .active:hover,
+.datepicker table tr td .active:hover.active,
+.datepicker table tr td .active:hover.disabled,
+.datepicker table tr td .active:hover:active,
+.datepicker table tr td .active:hover:hover,
+.datepicker table tr td .active:hover[disabled],
+.datepicker table tr td .active[disabled],
+.datepicker table tr td span.active.active,
+.datepicker table tr td span.active.disabled,
+.datepicker table tr td span.active.disabled.active,
+.datepicker table tr td span.active.disabled.disabled,
+.datepicker table tr td span.active.disabled:active,
+.datepicker table tr td span.active.disabled:hover,
+.datepicker table tr td span.active.disabled:hover.active,
+.datepicker table tr td span.active.disabled:hover.disabled,
+.datepicker table tr td span.active.disabled:hover:active,
+.datepicker table tr td span.active.disabled:hover:hover,
+.datepicker table tr td span.active.disabled:hover[disabled],
+.datepicker table tr td span.active.disabled[disabled],
+.datepicker table tr td span.active:active,
+.datepicker table tr td span.active:hover,
+.datepicker table tr td span.active:hover.active,
+.datepicker table tr td span.active:hover.disabled,
+.datepicker table tr td span.active:hover:active,
+.datepicker table tr td span.active:hover:hover,
+.datepicker table tr td span.active:hover[disabled],
+.datepicker table tr td span.active[disabled],
+.datepicker table tr td.active.active,
+.datepicker table tr td.active.disabled,
+.datepicker table tr td.active.disabled.active,
+.datepicker table tr td.active.disabled.disabled,
+.datepicker table tr td.active.disabled:active,
+.datepicker table tr td.active.disabled:hover,
+.datepicker table tr td.active.disabled:hover.active,
+.datepicker table tr td.active.disabled:hover.disabled,
+.datepicker table tr td.active.disabled:hover:active,
+.datepicker table tr td.active.disabled:hover:hover,
+.datepicker table tr td.selected,
+.datepicker table tr td.today,
+.datepicker table tr td.today.disabled,
+.datepicker table tr td.today.disabled:hover,
+.datepicker table tr td.today:hover,
+.mx-calendar-content .cell.active {
+  color: #ffffff;
+  background: $primary !important;
+}
+
+.mx-calendar-content .cell.in-range {
+  color: $text;
+  background: lighten($primary, 35%);
+}
+
+.mx-datepicker-main {
+  color: $text;
+}
+
+.datepicker table tr td.today {
+  background: lighten($gray-6, 20%) !important;
+  color: #fff !important;
+}
+
+.bootstrap-datetimepicker-widget a[data-action] {
+  padding: 0;
+}
+
+.bootstrap-datetimepicker-widget table td span,
+.bootstrap-datetimepicker-widget table td i {
+  display: inline-block;
+  //width: 32px;
+  //height: 32px;
+  //line-height: 32px;
+  margin: 2px 1.5px;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+.bootstrap-datetimepicker-widget .timepicker-hour,
+.bootstrap-datetimepicker-widget .timepicker-minute,
+.bootstrap-datetimepicker-widget .timepicker-second {
+  color: $text;
+  font-weight: bold;
+}
+
+.mx-input {
+  border-color: $border !important;
+}
+
+.mx-icon-calendar {
+  color: $gray-4 !important;
+}
+
+.mx-input:hover,
+.mx-input:focus {
+  border-color: $blue-light !important;
+}
+
+.mx-btn-text {
+  font-weight: bold !important;
+}
+
+.mx-table th {
+  font-weight: bold !important;
+}
+
+.mx-datepicker-range {
+  width: 100% !important;
+}

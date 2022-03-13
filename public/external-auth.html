@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title> <%= process.env.VUE_APP_NAME %></title>
+</head>
+<body>
+<div><%= process.env.VUE_APP_NAME %></div>
+
+<script>
+const base = '<%= process.env.VUE_APP_SERVER_URL + "/" + process.env.VUE_APP_SERVER_PREFIX %>';
+const disableRedirect = <%= process.env.NODE_ENV === "development" %>
+const domains = '<%= process.env.VUE_APP_EXTERNAL_AUTH_ORIGINS %>'.split(',').map(d => d.trim()).filter(x => x.length > 0);
+
+function getSourceWindow() {
+    return window.opener || window.parent
+}
+
+function needToRedirectToLoginPage() {
+    if (disableRedirect) {
+        return false;
+    }
+
+    const sourceWindow = getSourceWindow();
+
+    return !sourceWindow || sourceWindow === window;
+}
+
+if (needToRedirectToLoginPage()) {
+    window.location.href = '/'
+}
+
+async function onMessageReceived(event) {
+    if (!domains.includes(event.origin)) {
+        return;
+    }
+
+    try {
+        const {action, payload} = event.data
+
+        if (action === 'auth') {
+            const auth = await auth(payload.token);
+
+            sendMessage(event, 'auth', {success: auth})
+        } else if (action === 'logout') {
+            doLogout()
+
+            sendMessage(event, 'logout', {success: true})
+        }
+    } catch (e) {
+        sendMessage(event, 'error', {message: e.message})
+
+        console.error(e)
+    }
+}
+
+/**
+ *
+ * @param {MessageEvent<Window>} event
+ * @param {string} action
+ * @param {Object} payload
+ */
+function sendMessage(event, action, payload) {
+    event.source.postMessage({
+        action, payload
+    }, event.origin)
+}
+
+/**
+ * @param {string} token
+ * @return {Promise<boolean>}
+ */
+async function auth(token) {
+    const resp = await fetch(`${base}/auth/user_info`, {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    })
+
+    const user = await resp.json();
+
+    localStorage['auth_token'] = token
+    localStorage['auth_user'] = JSON.stringify(user)
+
+    return user && user.id > 0
+}
+
+function doLogout() {
+    localStorage.removeItem('auth_user')
+    localStorage.removeItem('auth_token')
+    localStorage.removeItem('login_url')
+    localStorage.removeItem('menuCollapsed')
+}
+
+
+// init
+window.addEventListener('message', onMessageReceived)
+
+for (let domain of domains) {
+    getSourceWindow().postMessage({action: 'init'}, domain)
+}
+</script>
+</body>
+</html>

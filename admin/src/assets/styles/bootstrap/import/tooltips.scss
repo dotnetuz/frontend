@@ -1,0 +1,43 @@
+@import '../../vars';
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/* TOOLTIPS */
+
+.tooltip {
+  z-index: 2400;
+
+  .tooltip-inner {
+    background: $blue;
+    padding: rem(4) rem(15);
+    color: $white;
+    font-size: rem(14);
+  }
+
+  &.left .tooltip-inner:before,
+  &.bs-tooltip-auto[x-placement^='left'],
+  &.bs-tooltip-left .arrow:before {
+    border-left-color: $blue;
+  }
+
+  &.right .tooltip-inner:before,
+  &.bs-tooltip-auto[x-placement^='right'],
+  &.bs-tooltip-right .arrow:before {
+    border-right-color: $blue;
+  }
+
+  &.top .tooltip-inner:before,
+  &.bs-tooltip-auto[x-placement^='top'],
+  &.bs-tooltip-top .arrow:before {
+    border-top-color: $blue;
+  }
+
+  &.bottom .tooltip-inner:before,
+  &.bs-tooltip-auto[x-placement^='bottom'],
+  &.bs-tooltip-bottom .arrow:before {
+    border-bottom-color: $blue;
+  }
+}
+
+.cell-tooltip {
+  top: -2px !important;
+}

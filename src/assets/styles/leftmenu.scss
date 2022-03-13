@@ -1,0 +1,243 @@
+@import "vars";
+
+$active: #5077d3;
+
+.platon-menu {
+  padding: 0
+}
+
+.platon-menu li {
+  list-style: none
+}
+
+.platon-menu ul {
+  padding: 0;
+  transition: .2s;
+  overflow: hidden;
+}
+
+.platon-menu ul li {
+  width: 100%
+}
+
+.platon-menu .mm-collapse:not(.mm-show) {
+  display: none;
+}
+
+.platon-menu .mm-collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+  -webkit-transition-duration: .15s;
+  transition-duration: .15s;
+  -webkit-transition-property: height, visibility;
+  transition-property: height, visibility
+}
+
+#sidebar-menu li a {
+  text-decoration: none !important;
+}
+
+#sidebar-menu > ul > li > a {
+  color: $gray-6;
+  display: flex;
+  align-items: center;
+  padding: .6rem 1.33rem .6rem 1.33rem;
+  position: relative;
+  -webkit-transition: all .1s;
+  transition: all .1s;
+  font-size: 14px
+}
+
+.collapsed #sidebar-menu > ul > li > a {
+  padding: 0.6rem 1.13rem 0.6rem 1.13rem
+}
+
+#sidebar-menu ul > li > a:active,
+  //#sidebar-menu ul > li > a:focus,
+#sidebar-menu ul > li > a:hover {
+  color: $active;
+  text-decoration: none
+}
+
+#sidebar-menu ul > li > a > span {
+  vertical-align: middle
+}
+
+#sidebar-menu ul > li > a i {
+  display: inline-block;
+  line-height: 1.0625rem;
+  margin: 0 10px 0 3px;
+  text-align: center;
+  vertical-align: middle;
+  width: 20px;
+  font-size: 18px
+}
+
+#sidebar-menu ul > li > span {
+  font-weight: bold;
+  color: lighten($gray-6, 10%);
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1.33rem 0.5rem 1.33rem;
+  position: relative;
+  transition: all 0.4s;
+  font-size: 14px;
+}
+
+#sidebar-menu > ul > li > a .drop-arrow {
+  float: right
+}
+
+#sidebar-menu > ul > li > a .drop-arrow i {
+  margin-right: 0
+}
+
+#sidebar-menu ul > li > a.active {
+  color: $active;
+  background: $gray-2
+}
+
+#sidebar-menu > ul > li > a:hover {
+  background: $gray-2;
+}
+
+#sidebar-menu > ul > li > ul {
+  //padding-left: 37px
+}
+
+//#sidebar-menu > ul > li > ul ul {
+//  padding-left: 20px
+//}
+
+#sidebar-menu .menu-arrow {
+  -webkit-transition: -webkit-transform .15s;
+  transition: -webkit-transform .15s;
+  transition: transform .15s;
+  transition: transform .15s, -webkit-transform .15s;
+  position: absolute;
+  right: 20px;
+  display: inline-block;
+  font-family: 'Material Design Icons';
+  text-rendering: auto;
+  line-height: 1.5rem
+}
+
+#sidebar-menu .menu-arrow:before {
+  content: "\F415"
+}
+
+#sidebar-menu .badge {
+  height: 20px;
+  padding-top: 5px;
+}
+
+#sidebar-menu li.mm-active > a > span.menu-arrow:before {
+  content: "\F374"
+}
+
+#sidebar-menu .menu-title {
+  padding: 10px 20px;
+  letter-spacing: .05em;
+  pointer-events: none;
+  cursor: default;
+  font-size: .6875rem;
+  text-transform: uppercase;
+  color: #444;
+  font-weight: 600
+}
+
+
+#sidebar-menu .right-align {
+  position: absolute;
+  right: 8px;
+}
+
+#sidebar-menu .menu-plus {
+  transition: transform 0.15s;
+  display: inline-block;
+  text-rendering: auto;
+  line-height: 1.5rem;
+
+  & > * {
+    font-size: 12px;
+    transition: transform 0.15s;
+  }
+
+  & > .rotated {
+    transform: rotate(180deg);
+  }
+}
+
+.left-menu {
+  .nav-second-level li a, .nav-thrid-level li a {
+    @for $i from 1 through 3 {
+      $paddingLeft: $i * 10px + 10px;
+
+
+      &.menu-level-#{$i}.no-icon {
+        padding: 8px 20px 8px $paddingLeft;
+      }
+
+      &.menu-level-#{$i} {
+        padding: 8px 20px 8px $paddingLeft + 30px;
+      }
+    }
+
+    & {
+      display: flex;
+    }
+
+    color: $gray-6;
+    display: block;
+    position: relative;
+    transition: all .2s;
+    font-size: 13px
+  }
+
+  &.collapsed {
+    .nav-second-level li a, .nav-thrid-level li a {
+      @for $i from 1 through 3 {
+        $paddingLeft: $i * 10px + 10px;
+
+
+        &.menu-level-#{$i}.no-icon {
+          padding: 8px !important;
+        }
+
+        &.menu-level-#{$i} {
+          padding: 8px !important;
+        }
+      }
+
+      white-space: nowrap;
+    }
+  }
+}
+
+//.nav-second-level li a:focus,
+.nav-second-level li a:hover,
+  //.nav-thrid-level li a:focus,
+.nav-thrid-level li a:hover {
+  color: $active
+}
+
+.nav-second-level li.mm-active > a, .nav-third-level li.mm-active > a {
+  color: $active
+}
+
+.left-menu.collapsed .platon-menu li {
+  position: relative;
+}
+
+.left-menu.collapsed .nav-second-level {
+  top: 0;
+  z-index: 10;
+  left: 55px;
+  position: absolute;
+  background: #ffffff;
+  border-radius: .25rem;
+  border: 1px solid $border;
+}

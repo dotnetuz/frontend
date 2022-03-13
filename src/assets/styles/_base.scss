@@ -1,0 +1,290 @@
+html {
+  font-size: 15px;
+  @media (max-width: $sm-max-width) {
+    font-size: 14px;
+  }
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: $base-font-family;
+  color: $text;
+  overflow-x: hidden;
+  position: relative;
+  background: #f3f3f3;
+}
+
+a {
+  color: $text;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $blue;
+  }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .25s;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */
+{
+  opacity: 0;
+}
+
+.dropdown-menu {
+  border-color: $border;
+}
+
+.divider {
+  border-color: rgba(51, 93, 153, 0.1);
+  margin: 0;
+  padding: 0;
+}
+
+.CodeMirror {
+  border-radius: 3.75px;
+}
+
+.CodeMirror-fullscreen.CodeMirror {
+  border-radius: 0;
+}
+
+.CodeMirror-fullscreen {
+  z-index: $code-editor-index !important;
+}
+
+
+.custom-switch.b-custom-control-lg .custom-control-label, .input-group-lg .custom-switch .custom-control-label {
+  font-size: 1rem !important;
+  padding-top: 3px !important;
+}
+
+
+.link:hover {
+  text-decoration: underline;
+}
+
+
+.over-hover {
+  & > .over-target, & > * > .over-target, & > * > * > .over-target {
+    opacity: 0;
+    transition: .2s;
+  }
+
+  &:hover > .over-target, &:hover > * > .over-target, &:hover > * > * > .over-target {
+    opacity: 1;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Turn on custom 8px wide scrollbar */
+::-webkit-scrollbar {
+  /* This is more usable for users trying to click it. */
+  -webkit-border-radius: 0;
+  background: whitesmoke;
+  height: 8px;
+  width: 4px;
+}
+
+/* hover effect for both scrollbar area, and scrollbar 'thumb' */
+::-webkit-scrollbar:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* The scrollbar 'thumb' ...that marque oval shape in a scrollbar */
+::-webkit-scrollbar-thumb:vertical {
+  /* This is the EXACT color of Mac OS scrollbars.
+     Yes, I pulled out digital color meter */
+  background: rgba(0, 0, 0, 0.3) !important;
+  -webkit-border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:vertical:active {
+  background: rgba(0, 0, 0, 0.4); /* Some darker color when you click it */
+  -webkit-border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background: rgba(0, 0, 0, 0.3) !important;
+  -webkit-border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:horizontal:active {
+  /* Some darker color when you click it */
+  background: lighten($primary, 20%) !important;
+  -webkit-border-radius: 100px;
+}
+
+.vm--container {
+  z-index: 2100;
+}
+
+.vm--modal {
+  border-radius: 8px;
+
+  overflow: visible !important;
+  height: auto !important;
+  top: 5vh !important;
+  margin-bottom: 5vh !important;
+  margin-top: 5vh;
+}
+
+//.form-modal {
+//  overflow: visible !important;
+//  height: auto !important;
+//  top: 5vh !important;
+//  margin-bottom: 5vh !important;
+//  margin-top: 5vh;
+//}
+
+.form-layout {
+  border: 1px solid $border;
+  background: white;
+  border-radius: .25rem;
+}
+
+.platon-form .select2-container, .form-layout .select2-container {
+  width: 100% !important;
+}
+
+.form-modal-footer {
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+  border-top: 2px solid $border;
+  z-index: $form-footer-modal-index;
+}
+
+.modal-form-header {
+  width: 100%;
+  position: sticky;
+  z-index: $form-header-modal-index;
+  top: -1px;
+}
+
+.b-toaster-top-right {
+  z-index: 2450;
+}
+
+.border-top-line {
+  border-top: 1px solid $border;
+}
+
+.btn-dark-red {
+  color: #ffffff;
+
+  background-color: darken($danger, 15%);
+  border-color: darken($danger, 10%);
+
+  &:hover {
+    color: #ffffff;
+    border-color: darken($danger, 5%);
+    background-color: darken($danger, 5%);
+  }
+}
+
+
+.plain-dropdown {
+
+  & .btn-link {
+    color: #fff !important;
+  }
+
+  & .btn {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+
+    &:hover, &.hover, &.active {
+      background-color: transparent !important;
+    }
+  }
+}
+
+.version {
+  color: lighten($text, 15%);
+  text-align: center;
+  padding: 0.7rem 1rem;
+}
+
+.b-skeleton {
+  background-color: $gray-1 !important;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.upload-area {
+  width: 100%;
+  height: 200px;
+  border-radius: 5px;
+  border: 5px dotted $border;
+}
+
+.context-menu {
+  position: absolute;
+  z-index: 5555;
+}
+
+.cert-item {
+  position: relative;
+  padding: 12px 18px;
+
+  &:not(:last-child) {
+    border-bottom: 2px solid #EEEEEE;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: rgba(0, 97, 189, 0.05);
+  }
+
+  &.selected {
+    background: rgba(0, 97, 189, 0.15) !important;
+
+    path {
+      fill: $primary;
+    }
+  }
+
+  &.expired {
+    background: unset;
+    cursor: not-allowed;
+
+    & .period {
+      @extend .text-danger;
+    }
+
+    .cert-org, .cert-owner-name, .cert-text {
+      opacity: .5;
+    }
+  }
+
+  .cert-text {
+    @extend .tg-1;
+  }
+
+  .cert-org {
+    color: #444;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .cert-owner-name {
+    color: #444;
+    margin-right: 40px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
+
+.tg-1 {
+  color: #9A9A9A;
+}

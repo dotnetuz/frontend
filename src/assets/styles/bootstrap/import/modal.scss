@@ -1,0 +1,24 @@
+@import "../../vars";
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/* MODAL */
+
+.modal {
+  .modal-content {
+    border: none;
+  }
+
+  .modal-header {
+    .close {
+      background: $white;
+    }
+  }
+}
+
+.modal-backdrop {
+  background: $black;
+
+  &.show {
+    opacity: 0.3;
+  }
+}

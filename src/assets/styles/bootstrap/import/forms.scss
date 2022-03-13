@@ -1,0 +1,163 @@
+@import "../../vars";
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/* FORMS */
+
+input::-webkit-input-placeholder {
+  color: $text-gray !important;
+}
+
+input::-moz-placeholder {
+  color: $text-gray !important;
+}
+
+input:-moz-placeholder {
+  color: $text-gray !important;
+}
+
+input:-ms-input-placeholder {
+  color: $text-gray !important;
+}
+
+.form-actions {
+  border-top: 1px solid $border;
+  padding-top: rem(20);
+  margin: rem(20) 0;
+}
+
+.form-control {
+  font-family: $base-font-family;
+  border-color: $pl-input-border;
+  color: $text;
+
+  &.form-control-rounded {
+    border-radius: 500px;
+  }
+
+  &:focus {
+    border-color: $primary;
+    color: $text;
+  }
+
+  &.input-sm {
+    padding: rem(4) rem(8);
+  }
+}
+
+label {
+  margin: 0 !important;
+}
+
+.col-form-label {
+  padding-top: rem(9);
+  padding-bottom: rem(9);
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+  background-color: $gray-1;
+}
+
+.input-group-addon {
+  border-color: $pl-input-border;
+  background-color: $gray-3;
+}
+
+span.input-group-addon {
+  outline: none !important;
+}
+
+.form-group {
+  &.has-danger {
+    .form-control {
+      border-color: $danger;
+    }
+  }
+
+  &.has-success {
+    .form-control {
+      border-color: $success;
+    }
+  }
+
+  &.has-warning {
+    .form-control {
+      border-color: $warning;
+    }
+  }
+
+  &.has-focused {
+    .form-control {
+      border-color: $primary;
+    }
+  }
+}
+
+.form-input-icon {
+  position: relative;
+
+  > i {
+    color: $gray-5;
+    position: absolute;
+    margin: rem(13) rem(2) rem(4) rem(10);
+    z-index: 3;
+    width: rem(16);
+    font-size: rem(16);
+    text-align: center;
+    left: 0;
+  }
+
+  .form-control {
+    padding-left: rem(34);
+  }
+
+  &.form-input-icon-right {
+    > i {
+      left: auto;
+      right: rem(3);
+      margin: rem(13) rem(10) rem(4) rem(2);
+    }
+
+    .form-control {
+      padding-left: rem(16);
+      padding-right: rem(34);
+    }
+  }
+}
+
+.input-group .add-on.input-group-addon {
+  width: 30px;
+  text-align: center;
+  display: inline-block;
+
+  i {
+    line-height: 2.2;
+  }
+}
+
+.custom-select {
+  border-color: $pl-input-border;
+  color: $text;
+
+  &:focus {
+    box-shadow: none;
+    border-color: $blue;
+  }
+}
+
+.custom-file-input:focus {
+  outline: none !important;
+}
+
+.custom-file-input:focus ~ .custom-file-label {
+  box-shadow: none !important;
+  border-color: $pl-input-border !important;
+}
+
+.custom-file-label::after {
+  display: none;
+}
+
+.custom-file-label {
+  border-color: $pl-input-border;
+}

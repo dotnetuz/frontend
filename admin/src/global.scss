@@ -1,0 +1,31 @@
+@import "assets/themes/default.scss";
+@import "assets/styles/vars";
+body,
+html {
+  background-color: white !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+// external styles
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~bootstrap-vue/dist/bootstrap-vue.css";
+@import "assets/styles/bootstrap/style";
+// @import "~vue-treeselect-pl/dist/vue-treeselect.css";
+// @import "~select2/dist/css/select2.min.css";
+
+@import "assets/styles/icons";
+
+// project styles
+// @import "assets/styles/table.scss";
+@import "assets/styles/pagination.scss";
+@import "assets/styles/tooltip";
+@import "assets/styles/leftmenu";
+@import "assets/styles/topbar";
+@import "assets/styles/datepicker";
+@import "assets/styles/form";
+@import "assets/styles/modal";
+@import "assets/styles/_select2.scss";
+@import "assets/styles/base";
